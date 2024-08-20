@@ -2,7 +2,7 @@ import Foundation
 
 // Token de Acceso
 class ApiNetwork {
-    let token = "54a70617bcb2d69512f061f542e81dd5"
+    let token = "TokenKey"
     
     struct Superhero: Codable {
         let id: String
