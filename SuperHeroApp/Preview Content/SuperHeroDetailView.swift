@@ -12,19 +12,23 @@ struct SuperHeroDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                
                 // Imagen del superhéroe
                 if let imageUrl = superhero.image.url, let url = URL(string: imageUrl) {
                     AsyncImage(url: url) { image in
                         image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 200)
+                           // .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth:.infinity)
+                            .scaledToFill()
+                        
                     } placeholder: {
                         ProgressView()
+                        
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
+                    
                 }
+                
                 
                 // Nombre del superhéroe
                 Text(superhero.name)
